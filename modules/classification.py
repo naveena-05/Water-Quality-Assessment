@@ -23,14 +23,4 @@ def classify_sample(band_averages):
     # Make predictions using the trained classifier
     prediction = classifier.predict([band_averages])
 
-    # Initialize label_mapping dictionary
-    label_mapping = {
-        "Non-Drinkable": "Non-Drinkable",
-        "Drinkable": "Drinkable",
-        # Add more mappings as needed
-    }
-
-    # Get the corresponding label/category for the prediction
-    classification_label = label_mapping[prediction[0]]
-
-    return classification_label
+    return prediction[0]
