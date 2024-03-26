@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>H2O Monitor</title>
+    </head>
+
+    <style>
+        .center-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px; /* Make the container take the full height of the viewport */
+        }
+
+        .button-box {
+            text-align: center;
+            border: 2px solid black; /* Border color */
+            padding: 20px; /* Padding inside the box */
+            width: 400px; /* Set the width to make it larger */
+            height: 200px; /* Set the height to make it taller */
+            display: inline-block; /* Make the box inline */
+            margin-top: 10px;
+        }
+
+    </style>
+
+    <body>
+        <div style="text-align: left; margin-top: 20px;">
+            <h1 style="color:black; font-size: 38px; font-family: ITC Benguiat; margin-bottom: 5px;">H2O</h1>
+            <h2 style="color:black; font-size: 36px; font-family: ITC Benguiat; margin-top:-5px; margin-bottom: 5px; ">MONITOR</h2>
+            <p style="font-size: 18px;font-family: Obra Letra; margin-top: -5px;">Know your H2O</p>
+        </div>
+
+        <div class="center-container">
+            <div class="button-box">
+                <h2>Result</h2>
+                <p>The water sample is: <span id="classification-result">{{ classification_result }}</span></p>
+                <br>
+                <marquee direction="left" height="30" width="400">"Disclaimer: This result is provided by a trained ML model and may not be 100% accurate".</marquee>
+            </div>
+            
+        </div>
+    </body>
+</html>

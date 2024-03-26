@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>H2O Monitor</title>
+    </head>
+    <style>
+
+        .center-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px; /* Make the container take the full height of the viewport */
+        }
+
+        /* Optional: Add some styling to the box */
+        .button-box {
+            text-align: center;
+            border: 2px solid black; /* Border color */
+            padding: 20px; /* Padding inside the box */
+            width: 400px; /* Set the width to make it larger */
+            height: 400px; /* Set the height to make it taller */
+            display: inline-block; /* Make the box inline */
+        }
+
+        #image-preview {
+            max-width: 100%; /* Ensure the image doesn't exceed its container */
+            max-height: 300px; /* Set a maximum height for the image */
+            margin-top: 10px; /* Add some space between the file input and the image */
+        }
+
+        .end-button {
+            text-align: center;
+            position: absolute;
+            bottom: 10px; /* Set the distance from the bottom of the container */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        /* Optional: Style the buttons */
+        .button-box button {
+            display: inline-block;
+            margin: 0 10px; /* Add some horizontal margin between buttons */
+            padding: 10px; /* Optional: Add padding for better visual appearance */
+        }
+    </style>
+    <body>
+        <div style="text-align: left; margin-top: 20px;">
+            <h1 style="color:black; font-size: 38px; font-family: ITC Benguiat; margin-bottom: 5px;">H2O</h1>
+            <h2 style="color:black; font-size: 36px; font-family: ITC Benguiat; margin-top:-5px; margin-bottom: 5px; ">MONITOR</h2>
+            <p style="font-size: 18px;font-family: Obra Letra; margin-top: -5px;">Know your H2O</p>
+        </div>
+
+        <!-- <div class="center-container">
+            <div class="button-box">
+                    <button>Capture Image</button>
+                    <button>Upload Image from Device</button>
+                    <h4>Image Preview</h4>
+                    <div id="image-container">
+                        <img id="image-preview" src="#" alt="Image Preview">
+                    </div>
+                    <button class="end-button">Submit</button>
+            </div>
+        </div> -->
+
+        <div class="center-container">
+            <div class="button-box">
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" id="image" name="image" accept="image/*" required onchange="previewImage(event)">
+                    <h4>Image Preview</h4>
+                    <div id="image-container">
+                        <img id="image-preview" src="#" alt="Image Preview">
+                    </div>
+                    <br>
+                    <br>
+                    <button type="submit" position = "fixed">Upload</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Add a section for displaying the classification result -->
+        <div class="result-section">
+            <h4>Classification Result:</h4>
+            <p id="classification-result"></p>
+        </div>
+
+        <script>
+            function previewImage(event) {
+                var input = event.target;
+                var imagePreview = document.getElementById("image-preview");
+            
+                // Check if a file is selected
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+            
+                    // Set up the reader to read the selected image file
+                    reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    };
+            
+                    // Read the selected image file as a data URL
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    // Clear the image preview if no file is selected
+                    imagePreview.src = "#";
+                }
+            }
+            
+            // Function to update the classification result on the page
+            function updateClassificationResult(result) {
+                const classificationResultElement = document.getElementById('classification-result');
+                classificationResultElement.innerText = result;
+            }
+        </script>
+    </body>
+</html>
