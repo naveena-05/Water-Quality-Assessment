@@ -7,6 +7,14 @@
     </head>
 
     <style>
+
+        /* Define the gradient background */
+        body {
+            background: linear-gradient(to bottom, #87CEEB, #FFFFFF); /* Light blue to white gradient */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            height: 100vh; /* Set the height to full viewport height */
+        }
         .center-container {
             position: relative;
             display: flex;
@@ -25,13 +33,26 @@
             margin-top: 10px;
         }
 
+        .logo-img {
+            position: absolute; /* Set position to absolute for custom positioning */
+            top: 0; /* Position at the top */
+            left: 0; /* Position at the left */
+            margin-top: 10px; /* Add margin to separate from the top */
+            margin-left: 10px; /* Add margin to separate from the left */
+            width: 80px; /* Set the width of the logo */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px;
+        }
+
     </style>
 
     <body>
         <div style="text-align: left; margin-top: 20px;">
-            <h1 style="color:black; font-size: 38px; font-family: ITC Benguiat; margin-bottom: 5px; display: inline; margin-right: 10px;">H<sub>2</sub>O</h1>
+            <h1 style="color:black; font-size: 38px; font-family: ITC Benguiat; margin-bottom: 5px; display: inline;margin-left: 100px; margin-right: 10px;">H<sub>2</sub>O</h1>
             <h2 style="color:black; font-size: 36px; font-family: ITC Benguiat; margin-top:-5px; margin-bottom: 20px; display: inline;">MONITOR</h2>
-            <p style="font-size: 18px;font-family: Obra Letra; margin-top: -5px;">Know your H<sub>2</sub>O</p>
+            <!-- Insert the logo image here -->
+            <img class="logo-img" src="/static/logo.jpeg" alt="Logo">
+            <p style="font-size: 18px;font-family: Obra Letra; margin-left:100px; margin-top: -5px;">Know your H<sub>2</sub>O</p>
         </div>
 
         <div class="center-container">

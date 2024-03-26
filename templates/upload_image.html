@@ -6,7 +6,13 @@
         <title>H2O Monitor</title>
     </head>
     <style>
-
+        /* Define the gradient background */
+        body {
+            background: linear-gradient(to bottom, #87CEEB, #FFFFFF); /* Light blue to white gradient */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            height: 100vh; /* Set the height to full viewport height */
+        }
         .center-container {
             position: relative;
             display: flex;
@@ -45,14 +51,30 @@
             margin: 0 10px; /* Add some horizontal margin between buttons */
             padding: 10px; /* Optional: Add padding for better visual appearance */
         }
+            /* Style for the logo image */
+
+        .logo-img {
+            position: absolute; /* Set position to absolute for custom positioning */
+            top: 0; /* Position at the top */
+            left: 0; /* Position at the left */
+            margin-top: 10px; /* Add margin to separate from the top */
+            margin-left: 10px; /* Add margin to separate from the left */
+            width: 80px; /* Set the width of the logo */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px;
+        }
+
+        
     </style>
     <body>
         <div style="text-align: left; margin-top: 20px;">
-            <h1 style="color:black; font-size: 38px; font-family: ITC Benguiat; margin-bottom: 5px; display: inline; margin-right: 10px;">H<sub>2</sub>O</h1>
+            <h1 style="color:black; font-size: 38px; font-family: ITC Benguiat; margin-bottom: 5px; display: inline;margin-left: 100px; margin-right: 10px;">H<sub>2</sub>O</h1>
             <h2 style="color:black; font-size: 36px; font-family: ITC Benguiat; margin-top:-5px; margin-bottom: 20px; display: inline;">MONITOR</h2>
-            <p style="font-size: 18px;font-family: Obra Letra; margin-top: -5px;">Know your H<sub>2</sub>O</p>
+            <!-- Insert the logo image here -->
+            <img class="logo-img" src="/static/logo.jpeg" alt="Logo">
+            <p style="font-size: 18px;font-family: Obra Letra; margin-left:100px; margin-top: -5px;">Know your H<sub>2</sub>O</p>
         </div>
-
+        </body>
         <!-- <div class="center-container">
             <div class="button-box">
                     <button>Capture Image</button>
@@ -81,10 +103,10 @@
         </div>
         
         <!-- Add a section for displaying the classification result -->
-        <div class="result-section">
+        <!-- <div class="result-section">
             <h4>Classification Result:</h4>
             <p id="classification-result"></p>
-        </div>
+        </div> -->
 
         <script>
             function previewImage(event) {
